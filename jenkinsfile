@@ -45,6 +45,7 @@ pipeline {
          steps{
              
              sh '''
+                echo $PWD
                 ./jenkins-script/local_deploy/deploy.sh
                 
              '''
