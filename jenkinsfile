@@ -2,7 +2,7 @@ pipeline {
     agent any
     
   environment {
-     IMAGE=mavan-app
+     IMAGE='mavan-app'
      BUILD_TAG=$BUILD_NUMBER
      PASS=credentials('DOCKER_HUB')
   
