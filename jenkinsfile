@@ -13,8 +13,8 @@ pipeline {
           steps {
 
               sh '''
-                  jenkins-script/build/mvn.sh mvn -B -DskipTests clean package
-                  jenkins-script/build/build.sh
+                  ./jenkins-script/build/mvn.sh mvn -B -DskipTests clean package
+                  ./jenkins-script/build/build.sh
               '''
 
           }
@@ -25,7 +25,7 @@ pipeline {
           steps{
 
               sh '''
-                jenkins-script/test/mvn.sh mvn test
+                ./jenkins-script/test/mvn.sh mvn test
 
               '''
           }
@@ -35,7 +35,7 @@ pipeline {
          steps{
              
              sh '''
-                jenkins-script/push/push.sh
+                ./jenkins-script/push/push.sh
                 
              '''
             }
