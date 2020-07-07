@@ -6,4 +6,7 @@ echo "*****************Build Jar File ******************************************
 echo "******************************************************************************"
 
 
-docker run --rm -it -v $PWD/java-app/:/app -v /root/.m2/:/root/.m2/ -w /app  maven:3-alpine "$@"
+WORKSPACE=/var/jenkins_home/workspace/PULL-FROM-GIT-PUSH-IN-DOCKER-HUB-MAVEN-APP
+
+
+docker run --rm -it -v $WORKSPACE/java-app/:/app -v /root/.m2/:/root/.m2/ -w /app  maven:3-alpine "$@"
