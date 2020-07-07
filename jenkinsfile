@@ -1,10 +1,14 @@
 pipeline {
     agent any
+
+  parameters {
+        string(defaultValue: "$BUILD_NUMBER", description: 'This is a image tag', name: 'BUILD_TAG')
+        string(defaultValue: "mavan-app", description: 'This is Image name', name: 'IMAGE')
+    }
     
   environment {
      PASS=credentials('DOCKER_HUB')
-  
-  
+   
   }
 
   stages {
