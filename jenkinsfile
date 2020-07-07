@@ -1,0 +1,58 @@
+pipeline {
+    agent any
+
+  stages {
+
+      stage('Building jar'){
+          steps {
+
+              sh '''
+                  jenkins-script/build/mvn.sh -B -DskipTests clean package
+                  jenkins-script/build/build.sh
+              '''
+
+          }
+      }
+  
+
+      stage('Test'){
+          steps{
+
+              sh '''
+                jenkins-script/test/mvn.sh mvn test
+
+              '''
+          }
+      }
+    
+     stage('Push'){
+         steps{
+             
+             sh '''
+                jenkins-script/push/push.sh
+                
+             '''
+            }
+     }
+
+
+  }  
+
+  }
+
+
+  
+    
+
+
+
+  
+
+
+
+
+
+
+
+
+
