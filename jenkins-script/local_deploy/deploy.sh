@@ -6,4 +6,5 @@ echo "**************************************************************************
 
 
 cd jenkins-script/local_deploy/ && echo $PWD 
-docker-compose up -d .
+docker-compose up -d -f docker-compose.yaml .
+echo $PWD
