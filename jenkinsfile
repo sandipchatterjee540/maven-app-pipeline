@@ -40,6 +40,15 @@ pipeline {
              '''
             }
      }
+     
+     stage('Deploy'){
+         steps{
+             
+             sh '''
+                ./jenkins-script/local_deploy/deploy.sh
+                
+             '''
+            }
 
 
   }  
